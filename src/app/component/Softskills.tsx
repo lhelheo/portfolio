@@ -8,7 +8,7 @@ const Softskills = () => {
         {softskills.map((softskill, index) => (
           <div
             key={index}
-            className="bg-[#1e1e1e] p-6 rounded-lg shadow-lg hover:scale-105 transition-transform"
+            className="bg-[#1e1e1e] lg:min-w-[300px] w-[250px] p-6 rounded-lg shadow-lg hover:scale-105 transition-transform"
           >
             <h4 className="text-xl font-medium text-[#f2f2f2]">{softskill.title}</h4>
             <p className="text-md text-[#d1d1d1] mt-2">{softskill.description}</p>

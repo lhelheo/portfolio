@@ -15,11 +15,11 @@ export default function Page() {
       <Header />
       <section id="sobre-mim"><WhoIs /></section>
       <section id="tecnologias"><Technologies /></section>
-      <section id="experiencia"><Experience /></section>
-      <section id="idioma"><Languages /></section>
-      <section id="habilidades"><Softskills /></section>
       <section id="projetos"><Projects /></section>
+      <section id="experiencia"><Experience /></section>
       <section id="certificados"><Certificates /></section>
+      <section id="habilidades"><Softskills /></section>
+      <section id="idioma"><Languages /></section>
       <section id="contato"><Footer /></section>
     </div>
   );
