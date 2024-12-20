@@ -1,8 +1,8 @@
 export const WhoIs = () => {
     return (
-        <section className="h-screen flex items-center justify-center max-h-[700px]">
+        <section className="md:h-screen flex items-center justify-center lg:max-h-[700px]">
             <div className="flex flex-col lg:flex-row items-center gap-12 text-center lg:text-left">
-                <div>
+                <div className="mt-[200px] lg:mt-0">
                     <h2 className="text-4xl lg:text-6xl font-bold">
                         Olá, eu sou <br />
                         <span className="text-4xl lg:text-6xl text-[#f2f2f2]">Leonardo Villalva</span>

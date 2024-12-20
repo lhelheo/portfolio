@@ -11,7 +11,7 @@ import Footer from "../component/Footer";
 export default function Page() {
   
   return (
-    <div className="bg-[#0b0b0b] text-[#c1c1c1] font-sans">
+    <div className="bg-[#0b0b0b] text-[#c1c1c1] font-sans px-6 w-full">
       <Header />
       <section id="sobre-mim"><WhoIs /></section>
       <section id="tecnologias"><Technologies /></section>
