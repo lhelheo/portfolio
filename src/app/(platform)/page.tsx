@@ -1,8 +1,25 @@
+"use client"
+import { useState } from "react";
+
 export default function Page() {
     // Download currículo
     // Softskills
     // Tooltip e badges
     // Utilizar loadings
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const handlePrev = () => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      );
+    };
+  
+    const handleNext = () => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    };
     
     const softskills = [
         { title: "Comunicação", description: "Capacidade de transmitir ideias de forma clara e eficaz." },
@@ -20,7 +37,8 @@ export default function Page() {
         { src: "node.png", alt: "Node.js ícone" },
         { src: "ts.png", alt: "TypeScript ícone" },
         { src: "express.png", alt: "Express ícone" },
-        { src: "tailwind.png", alt: "TailwindCSS ícone" },
+        { src: "tailwind1.png", alt: "TailwindCSS ícone" },
+        { src: "prisma-orm.png", alt: "Prisma ORM ícone" },
     ]
 
     const textColor = "bg-gradient-to-r from-[#c1c1c1] to-[#f2f2f2] bg-clip-text text-transparent cursor-pointer transition-all ease-linear hover:text-[#c1c1c1] hover:scale-105"
@@ -59,16 +77,61 @@ export default function Page() {
                     <img src="yo.png" alt="Avatar" />
                 </div>
             </div>
-            <section className="flex flex-col justify-center items-center mb-12 bg-gradient-to-t from-[#020202] to-[#0f0f0f] h-[400px]">
+            <section className="flex flex-col justify-center items-center py-12 bg-[#0e0e0e]">
                 <h3 className="text-2xl mb-6">Tecnologias</h3>
-                <div className="flex flex-wrap justify-center gap-6">
-                    {images.map((image, index) => (
-                        <div key={index} className="flex flex-col items-center bg-[#111111] rounded p-4 transition-all hover:scale-105">
-                            <img src={image.src} alt={image.alt} className="w-16 h-16 object-contain mb-2" />    
-                            <p className="text-sm text-[#c1c1c1]">{image.alt.split(" ")[0]}</p>
-                        </div>
-                        ))}
-                </div>
+                <div className="relative max-w-[600px] mx-auto">
+      <div className="overflow-hidden">
+        <div
+          className="flex transition-transform duration-500"
+          style={{
+            transform: `translateX(-${currentIndex * 100}%)`,
+          }}
+        >
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 w-full flex flex-col items-center bg-[#242424] shadow-md rounded p-4"
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="w-[100px] h-[100px] object-contain mb-2"
+              />
+              <p className="text-sm text-[#c1c1c1]">
+                {image.alt.split(" ")[0]}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Botões de navegação */}
+      <button
+        onClick={handlePrev}
+        className="absolute top-1/2 -left-6 transform -translate-y-1/2 bg-[#242424] text-white p-2 rounded-full hover:bg-[#333] focus:outline-none"
+      >
+        &lt;
+      </button>
+      <button
+        onClick={handleNext}
+        className="absolute top-1/2 -right-6 transform -translate-y-1/2 bg-[#242424] text-white p-2 rounded-full hover:bg-[#333] focus:outline-none"
+      >
+        a
+      </button>
+
+      {/* Indicadores */}
+      <div className="flex justify-center mt-4 space-x-2">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            className={`w-3 h-3 rounded-full ${
+              index === currentIndex ? "bg-white" : "bg-[#555]"
+            }`}
+          ></button>
+        ))}
+      </div>
+    </div>
             </section>
             <section className="flex flex-col  justify-center items-center gap-6 bg-gradient-to-t from-[#020202] to-[#0f0f0f] h-[400px]">
                 <h3 className="text-2xl">Softskills</h3>
