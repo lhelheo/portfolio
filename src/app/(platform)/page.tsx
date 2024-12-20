@@ -96,39 +96,43 @@ export default function Page() {
 
   return (
     <div className="bg-[#0b0b0b] text-[#c1c1c1] font-sans">
-      <header className="flex justify-between items-center p-6 bg-[#0f0f0f]">
-        <h1 className="text-xl font-bold text-[#f2f2f2]">
-          &lt; Leo Villalva &gt;
-        </h1>
-        <nav className="flex gap-6">
-          {["Sobre mim", "Tecnologias", "Projetos", "Contato"].map((item, index) => (
-            <p
-              key={index}
-              className="hover:text-[#f2f2f2] transition-colors cursor-pointer"
-            >
-              {item}
-            </p>
-          ))}
-        </nav>
-        <div className="flex gap-4">
-          <a
-            href="https://github.com/lhelheo"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:scale-110 transition-transform"
-          >
-            <img src="image 1.png" alt="GitHub" className="w-6 h-6" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/leonardo-oliveira-villalva-0993a7221"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:scale-110 transition-transform"
-          >
-            <img src="image 2.png" alt="LinkedIn" className="w-6 h-6" />
-          </a>
-        </div>
-      </header>
+    <header className="flex justify-between items-center p-6 bg-[#0f0f0f]">
+      <h1 className="text-xl font-bold text-[#f2f2f2]">
+        &lt; Leo Villalva &gt;
+      </h1>
+      <nav className="flex gap-6">
+        {["Sobre mim", "Tecnologias", "Projetos", "Contato"].map((item, index) => (
+        <p
+          key={index}
+          className="hover:text-[#f2f2f2] transition-colors cursor-pointer"
+          onClick={() => {
+            const section = document.getElementById(item.toLowerCase().replace(" ", "-"));
+            section?.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
+          {item}
+        </p>
+        ))}
+      </nav>
+      <div className="flex gap-4">
+        <a
+        href="https://github.com/lhelheo"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:scale-110 transition-transform"
+        >
+        <img src="image 1.png" alt="GitHub" className="w-6 h-6" />
+        </a>
+        <a
+        href="https://www.linkedin.com/in/leonardo-oliveira-villalva-0993a7221"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:scale-110 transition-transform"
+        >
+        <img src="image 2.png" alt="LinkedIn" className="w-6 h-6" />
+        </a>
+      </div>
+    </header>
 
       <section className="h-screen flex items-center justify-center max-h-[700px]">
         <div className="flex flex-col lg:flex-row items-center gap-12 text-center lg:text-left">
@@ -206,7 +210,7 @@ export default function Page() {
         </div>
         </section>
 
-        <section className="py-12 bg-[#0f0f0f] text-[#c1c1c1]">
+        <section className="py-12 bg-[#000000] text-[#c1c1c1]">
         <h3 className="text-2xl font-semibold text-center mb-8 text-[#f2f2f2]">
             Formação Acadêmica e Experiência
         </h3>
@@ -269,7 +273,7 @@ export default function Page() {
 
 
 
-      <section className="py-12 bg-[#0b0b0b]">
+      <section className="py-12 bg-[#000000]">
         <h3 className="text-2xl font-semibold text-center mb-8">Softskills</h3>
         <div className="flex flex-wrap justify-center gap-8">
           {softskills.map((softskill, index) => (
@@ -315,24 +319,49 @@ export default function Page() {
 
     <section className="py-12 bg-[#0f0f0f]">
   <h3 className="text-2xl font-semibold text-center mb-8 text-[#f2f2f2]">Certificados</h3>
-<div className="flex flex-wrap justify-center gap-8">
-    {certificates.map((certificate, index) => (
-        <div
-            key={index}
-            className="flex flex-col items-center bg-[#1e1e1e] max-w-[250px] shadow-lg rounded-lg p-6 hover:scale-105 transition-transform cursor-pointer"
-            onClick={() => window.open(certificate.link, "_blank")}
-        >
-            <img
-                src={certificate.image}
-                alt={certificate.title}
-                className="w-[200px] h-[150px] object-contain mb-4 rounded"
-            />
-            <h4 className="text-lg font-medium text-[#f2f2f2] text-center">{certificate.title}</h4>
-            <p className="text-sm text-[#d1d1d1] mt-2 text-center">{certificate.subtitle}</p>
+    <div className="flex flex-wrap justify-center gap-8">
+        {certificates.map((certificate, index) => (
+            <div
+                key={index}
+                className="flex flex-col items-center bg-[#1e1e1e] max-w-[250px] shadow-lg rounded-lg p-6 hover:scale-105 transition-transform cursor-pointer"
+                onClick={() => window.open(certificate.link, "_blank")}
+            >
+                <img
+                    src={certificate.image}
+                    alt={certificate.title}
+                    className="w-[200px] h-[150px] object-contain mb-4 rounded"
+                />
+                <h4 className="text-lg font-medium text-[#f2f2f2] text-center">{certificate.title}</h4>
+                <p className="text-sm text-[#d1d1d1] mt-2 text-center">{certificate.subtitle}</p>
+                <p className="text-sm text-[#cf7002] mt-2 text-center">Clique aqui para visualizar</p>
+            </div>
+        ))}
+    </div>
+    </section>
+
+    <footer className="py-6 bg-[#0f0f0f] text-[#c1c1c1] text-center">
+        <p className="text-sm">
+            &copy; 2024 Leonardo Villalva. Todos os direitos reservados.
+        </p>
+        <div className="flex justify-center gap-4 mt-4">
+            <a
+                href="https://github.com/lhelheo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:scale-110 transition-transform"
+            >
+                <img src="image 1.png" alt="GitHub" className="w-6 h-6" />
+            </a>
+            <a
+                href="https://www.linkedin.com/in/leonardo-oliveira-villalva-0993a7221"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:scale-110 transition-transform"
+            >
+                <img src="image 2.png" alt="LinkedIn" className="w-6 h-6" />
+            </a>
         </div>
-    ))}
-</div>
-</section>
+    </footer>
 
     </div>
   );
