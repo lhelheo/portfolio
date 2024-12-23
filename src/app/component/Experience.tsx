@@ -1,6 +1,6 @@
 export const Experience = () => {
     return (
-        <section className="py-12 bg-[#000000] text-[#c1c1c1]">
+        <section className="py-20 bg-[#000000] text-[#c1c1c1]">
         <h3 className="text-2xl font-semibold text-center mb-8 text-[#f2f2f2]">
             Formação Acadêmica e Experiência
         </h3>

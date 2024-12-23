@@ -15,7 +15,7 @@ export const Technologies = () => {
   };
 
   return (
-    <section className="py-12 bg-[#0f0f0f] flex flex-col items-center mt-10">
+    <section className="py-20 bg-[#0f0f0f] flex flex-col items-center mt-10">
       <h3 className="text-2xl font-semibold text-center mb-8 text-[#f2f2f2]">
         Tecnologias
       </h3>

@@ -2,8 +2,8 @@ import { softskills } from "../utils/data";
 
 const Softskills = () => {
   return (
-    <section className="py-12 bg-[#000000]">
-      <h3 className="text-2xl font-semibold text-center mb-8">Softskills</h3>
+    <section className="py-20 bg-[#000000]">
+      <h3 className="text-2xl font-semibold text-center mb-8">Habilidades</h3>
       <div className="flex flex-wrap justify-center gap-8">
         {softskills.map((softskill, index) => (
           <div
