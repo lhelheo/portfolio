@@ -1,6 +1,5 @@
 import Header from "../component/Header";
 import { WhoIs } from "../component/WhoIs";
-import Technologies from "../component/Tecnologies";
 import { Experience } from "../component/Experience";
 import { Languages } from "../component/Languages";
 import Softskills from "../component/Softskills";
@@ -14,7 +13,6 @@ export default function Page() {
     <div className="bg-[#0b0b0b] text-[#c1c1c1] font-sans px-6 w-full">
       <Header />
       <section id="sobre-mim"><WhoIs /></section>
-      <section id="tecnologias"><Technologies /></section>
       <section id="projetos"><Projects /></section>
       <section id="experiencia"><Experience /></section>
       <section id="certificados"><Certificates /></section>
