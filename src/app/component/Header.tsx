@@ -7,7 +7,6 @@ const Header = () => {
 
   const menuItems = [
     { label: "Sobre", id: "sobre-mim" },
-    { label: "Tecnologias", id: "sobre-mim" },
     { label: "Projetos", id: "projetos" },
     { label: "Experiência", id: "experiencia" },
     { label: "Certificados", id: "certificados" },
